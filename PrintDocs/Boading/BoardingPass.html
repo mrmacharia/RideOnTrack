@@ -1,0 +1,87 @@
+<html dir="ltr" lang="en-US">
+   <head>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+
+    </head>
+   <body>
+
+    <div class="box">
+        <div class="ticket">
+          <span class="airline">ROT</span>
+          <span class="airline airlineslip">ROT</span>
+          <span class="boarding">Boarding pass</span>
+          <div class="content">
+            <span class="departure"></span>
+            <span class="plane"><?xml version="1.0" ?>
+                <img style="height: 50px;" src="styles/right-direction.svg" alt=""></span>
+            <span class="destination"></span>
+
+            <span class="departure departureslip"></span>
+            <span class="plane planeslip" st><?xml version="1.0" ?>
+                <img style="height: 35px;" src="styles/right-direction.svg" alt="">
+            </span>
+            <span class="destination destinationslip"></span>
+            <div class="sub-content">
+              <span class="watermark">ROT</span>
+              <span class="name">PASSENGER NAME<br><span class="data"></span></span>
+              <span class="flight">Train No.<br><span class="data"></span></span>
+              <span class="gate">Locomotive<br><span class="data"></span></span>
+              <span class="seat">SEAT<br><span class="data"></span></span>
+              <span class="boardingtime">BOARDING TIME<br><span class="data"></span></span>
+
+               <span class="flight flightslip">Train No.<br><span class="data"></span></span>
+                <span class="seat seatslip">SEAT<br><span class="data"></span></span>
+               <span class="name nameslip">PASSENGER NAME<br><span class="data"></span></span>
+            </div>
+          </div>
+          <div class="barcode"></div>
+          <div class="barcode slip"></div>
+        </div>
+      </div>
+
+      <script>
+        var flight = {
+  number: "X3-65C3",
+  gate: "11B",
+  boardingTime: "8:25PM ON JANUARY 15 2024",
+  departure: "NAI",
+  destination: "NYK",
+  passengers: [
+    {
+      firstName: "Macharia",
+      lastName: "Njiru",
+      seat: "45A"
+    },
+    {
+      firstName: "Macharia",
+      lastName: "Macharia",
+      seat: "45B"
+    }
+  ]
+};
+
+document.querySelectorAll(".name .data")[0].innerText =
+  flight.passengers[0].lastName + ", " + flight.passengers[0].firstName;
+document.querySelectorAll(".name .data")[1].innerText =
+  flight.passengers[0].lastName + ", " + flight.passengers[0].firstName;
+
+document.querySelectorAll(".flight .data")[0].innerText = flight.number;
+document.querySelectorAll(".flight .data")[1].innerText = flight.number;
+
+document.querySelectorAll(".seat .data")[0].innerText =
+  flight.passengers[0].seat;
+document.querySelectorAll(".seat .data")[1].innerText =
+  flight.passengers[0].seat;
+
+document.querySelector(".gate .data").innerText = flight.gate;
+document.querySelector(".boardingtime .data").innerText = flight.boardingTime;
+
+document.querySelectorAll(".departure")[0].innerText = flight.departure;
+document.querySelectorAll(".departure")[1].innerText = flight.departure;
+
+document.querySelectorAll(".destination")[0].innerText = flight.destination;
+document.querySelectorAll(".destination")[1].innerText = flight.destination;
+
+      </script>
+   </body>
+</html>
